@@ -1,0 +1,10 @@
+(.venv) ryomen@ryomen:~/Development/personal/system_one/laya$ python3 main.py 
+INFO| 2026-09-30 15:35:05,410| httpx| _send_single_request: 1025   HTTP Request: GET https://huggingface.co/api/models/convaiinnovations/laya/revision/main "HTTP/1.1 200 OK"
+Fetching 5 files: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5/5 [00:00<00:00, 590.65it/s]
+Download complete:                                                                                                                                                                            |  0.00B            
+Reconstruction complete: |                                                                                                                                                           |  0.00B /  0.00B            
+/home/ryomen/Development/personal/system_one/laya/.venv/lib/python3.11/site-packages/laya/router.py:456: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  agent = Agent(repo, **kwargs)
+INFO| 2026-09-30 15:35:12,070| Laya testing| <module>: 26   raw result: 
+	{'model': 'laya-rl-agent', 'answers': {'queue': {'type': 'choice', 'choice': 'billing', 'probabilities': {'billing': 0.9682, 'technical': 0.0157, 'other': 0.0162}, 'confidence': 0.8515, 'answer_confidence': 0.9682, 'action': {'act_probability': 1.0}}}, 'usage': {'input_tokens': 47, 'output_tokens': 0, 'state_tokens': 5, 'state_tokens_dropped': 0, 'truncated': False, 'truncated_questions': []}, 'routing': {'model': 'english', 'repo': 'convaiinnovations/laya', 'reason': 'English Latin text', 'detection': {'script': 'latin', 'script_profile': {'latin': 1.0}, 'language': 'en', 'is_english': True, 'language_undecided': False, 'diacritic_rate': 0.0, 'non_latin_fraction': 0.0, 'mixed_segment': None}, 'workflow': None}}
+INFO| 2026-09-30 15:35:12,071| Laya testing| <module>: 27   	billing
