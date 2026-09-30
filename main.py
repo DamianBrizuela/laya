@@ -13,7 +13,6 @@ logging.basicConfig(
 
 log= logging.getLogger("Laya testing")
 
-log.info('pre router')
 router = Router()
 questions = {
     "queue": {
@@ -26,7 +25,7 @@ questions = {
         },
     }
 }
-log.info('pre prediction')
+
 result = router.predict("I can´t open de web browser after teh update of my machine.", questions)
 
 log.info(f"raw result: \n\t{result}")
