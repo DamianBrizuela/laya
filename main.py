@@ -1,3 +1,7 @@
+import os
+os.environ["HF_HUB_OFFLINE"] = "1"
+# anula la consulta constante de diferencias de repo con el actual.
+
 from laya import Router
 import logging
 
@@ -9,6 +13,7 @@ logging.basicConfig(
 
 log= logging.getLogger("Laya testing")
 
+log.info('pre router')
 router = Router()
 questions = {
     "queue": {
@@ -21,7 +26,8 @@ questions = {
         },
     }
 }
-result = router.predict("I was charged twice.", questions)
+log.info('pre prediction')
+result = router.predict("I can´t open de web browser after teh update of my machine.", questions)
 
 log.info(f"raw result: \n\t{result}")
 log.info(f'\t{result["answers"]["queue"]["choice"]}')
