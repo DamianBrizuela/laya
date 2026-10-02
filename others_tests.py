@@ -46,14 +46,21 @@ questions = {
 
 
 
+
+
+
 result = router.predict(state, questions)
 for k,v in result.items():
     print(f"{str(k):>20}{v}\n")
 
 score_response= result["answers"]["urgency"]["score"]
 
+def pick_score_label(score: float, labels: list[str]) -> str:
+    """ recupera la etiqueta correspondiente segun la urgencia"""
+    return labels[max(0, min(round(score), len(labels)-1))]
+
 
 log.info(f'choice [] {result["answers"]["department"]["choice"]}')
 log.info(f'churn risk [noul] {result["answers"]["churn_risk"]["noul"]}')
 log.info(f'model {result["routing"]["model"]}')
-log.info(f'urgency: {Urgency_labels[min(round(score_response), len(Urgency_labels)-1)]}')
+log.info(f'urgency: {pick_score_label(score_response, Urgency_labels)}')
